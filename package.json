@@ -1,0 +1,25 @@
+{
+  "name": "@webstronauts/mercury",
+  "description": "A Node.js framework built on top of Express.",
+  "version": "0.1.0",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "standard"
+  },
+  "engines": {
+    "node": ">=8.9.0"
+  },
+  "dependencies": {
+    "avvio": "^5.0.1",
+    "express": "^4.16.2",
+    "lodash.flow": "^3.5.0",
+    "lodash.omit": "^4.5.0",
+    "lodash.pick": "^4.4.0",
+    "lodash.wrap": "^4.1.1",
+    "pino": "^4.10.3",
+    "pino-http": "^3.0.1"
+  },
+  "devDependencies": {
+    "standard": "^10.0.3"
+  }
+}
