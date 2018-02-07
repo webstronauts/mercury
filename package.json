@@ -1,7 +1,7 @@
 {
   "name": "@webstronauts/mercury",
   "description": "A Node.js framework built on top of Express.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "main": "lib/index.js",
   "scripts": {
     "test": "standard"
