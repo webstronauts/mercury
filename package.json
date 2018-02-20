@@ -12,7 +12,6 @@
   "dependencies": {
     "avvio": "^5.0.1",
     "decamelize": "^2.0.0",
-    "express": "^4.16.2",
     "http-errors": "^1.6.2",
     "lodash.flow": "^3.5.0",
     "lodash.omit": "^4.5.0",
@@ -23,7 +22,11 @@
   },
   "devDependencies": {
     "ava": "^0.25.0",
+    "express": "^4.16.2",
     "standard": "^11.0.0",
     "supertest": "^3.0.0"
+  },
+  "peerDependencies": {
+    "express": "^4.16.2"
   }
 }
