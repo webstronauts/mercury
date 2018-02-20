@@ -4,7 +4,7 @@
   "version": "0.4.0",
   "main": "lib/index.js",
   "scripts": {
-    "test": "standard"
+    "test": "standard && ava"
   },
   "engines": {
     "node": ">=8.9.0"
@@ -22,6 +22,8 @@
     "pino-http": "^3.0.1"
   },
   "devDependencies": {
-    "standard": "^11.0.0"
+    "ava": "^0.25.0",
+    "standard": "^11.0.0",
+    "supertest": "^3.0.0"
   }
 }
