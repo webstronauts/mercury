@@ -1,10 +1,10 @@
 # mercury
 
-A [Node.js](https://nodejs.org) framework built on top of [Express](https://expressjs.com/).
+A [Node.js](https://nodejs.org) framework built on top of [Express](https://expressjs.com/) and [Next.js](https://github.com/zeit/next.js/).
 
 <img src="https://media.giphy.com/media/jaBE1ctpbIv0k/200w_d.gif" width="200" />
 
-[![CircleCI](https://circleci.com/gh/robinvdvleuten/mercury.svg?style=shield&circle-token=a09b28755aabd3e288318cc2860122932d9c5879)](https://circleci.com/gh/robinvdvleuten/mercury)
+[![Build Status](https://semaphoreci.com/api/v1/projects/6c426a6f-60a5-4716-9f09-797a2913ad55/1814984/shields_badge.svg)](https://semaphoreci.com/webstronauts/mercury)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Usage
