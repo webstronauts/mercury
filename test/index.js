@@ -23,18 +23,41 @@ test('Mercury can be booted', async t => {
   t.is(res.text, 'Hello, world!')
 })
 
-test('Next.js can be used to handle paths', async t => {
+test('Next.js can be used to render routes', async t => {
   t.plan(2)
 
   const app = createMercuryInstance()
 
-  app.after(err => {
+  app.ready(err => {
     if (err) throw err
-    app.get('*', app.next.getRequestHandler())
+    app.get('/foo', app.renderPage('/'))
   })
 
   const res = await request(app)
-    .get('/')
+    .get('/foo')
+
+  const $ = cheerio.load(res.text)
+
+  t.is(res.status, 200)
+  t.is($('[data-reactroot]').text(), 'Hello, world!')
+})
+
+test('Next.js can be used to render HTML', async t => {
+  t.plan(2)
+
+  const app = createMercuryInstance()
+
+  app.ready(err => {
+    if (err) throw err
+
+    app.get('/bar', async (req, res) => {
+      const html = await app.renderPageToHTML(req, res, '/')
+      res.send(html)
+    })
+  })
+
+  const res = await request(app)
+    .get('/bar')
 
   const $ = cheerio.load(res.text)
 

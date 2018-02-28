@@ -1,6 +1,6 @@
 # mercury
 
-A [Node.js](https://nodejs.org) framework built on top of [Express](https://expressjs.com/) and [Next.js](https://github.com/zeit/next.js/).
+An opinionated framework built on top of [Express](https://expressjs.com/) and [Next.js](https://github.com/zeit/next.js/).
 
 <img src="https://media.giphy.com/media/jaBE1ctpbIv0k/200w_d.gif" width="200" />
 
