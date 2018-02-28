@@ -1,1 +1,1 @@
-module.exports = require('./dist/errors')
+module.exports = require('./dist/errors').default
