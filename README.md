@@ -24,6 +24,12 @@ app.ready(err => {
   })
 })
 
+process.on('SIGTERM', async () => {
+  // Shutdown application before exiting
+  await app.shutdown()
+  process.exit(0)
+})
+
 async function start () {
   await app.listen(4000, '0.0.0.0')
 
