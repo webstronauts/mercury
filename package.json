@@ -4,11 +4,15 @@
   "version": "0.5.0",
   "main": "lib/index.js",
   "scripts": {
+    "pretest": "next build",
     "test": "standard && ava"
   },
   "engines": {
     "node": ">=8.9.0"
   },
+  "files": [
+    "lib"
+  ],
   "dependencies": {
     "avvio": "^5.0.1",
     "decamelize": "^2.0.0",
@@ -21,13 +25,20 @@
   },
   "devDependencies": {
     "ava": "^0.25.0",
+    "cheerio": "^1.0.0-rc.2",
     "express": "^4.16.2",
     "http-errors": "^1.6.2",
+    "next": "^5.0.1-canary.9",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
     "standard": "^11.0.0",
     "supertest": "^3.0.0"
   },
   "peerDependencies": {
     "express": "^4.16.2",
-    "http-errors": "^1.6.2"
+    "http-errors": "^1.6.2",
+    "next": "^5.0.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
   }
 }
