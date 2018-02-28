@@ -8,7 +8,15 @@ export async function build (task) {
     plugins: [
       'transform-object-rest-spread',
       'transform-runtime'
-    ]
+    ],
+    env: {
+      test: {
+        plugins: [
+          'istanbul'
+        ],
+        sourceMaps: 'inline'
+      }
+    }
   }).target('dist')
 }
 
