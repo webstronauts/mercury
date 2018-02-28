@@ -1,7 +1,7 @@
-const cheerio = require('cheerio')
-const request = require('supertest')
-const test = require('ava')
-const mercury = require('../lib')
+import cheerio from 'cheerio'
+import request from 'supertest'
+import test from 'ava'
+import mercury from '../index'
 
 function createMercuryInstance () {
   return mercury({ logger: { level: 'silent' } })

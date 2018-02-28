@@ -2,16 +2,25 @@
   "name": "@webstronauts/mercury",
   "description": "A Node.js framework built on top of Express.",
   "version": "0.5.0",
-  "main": "lib/index.js",
+  "license": "UNLICENSED",
+  "author": "Robin van der Vleuten <robin@webstronauts.co>",
+  "main": "index.js",
   "scripts": {
-    "pretest": "next build",
+    "build": "run-p build:dist",
+    "build:dist": "taskr",
+    "build:next": "next build",
+    "prepublish": "run-p build",
+    "pretest": "run-p build:*",
     "test": "standard && ava"
   },
   "engines": {
     "node": ">=8.9.0"
   },
   "files": [
-    "lib"
+    "dist",
+    "errors.js",
+    "index.js",
+    "redirect.js"
   ],
   "dependencies": {
     "avvio": "^5.0.1",
@@ -24,15 +33,23 @@
     "pino-http": "^3.0.1"
   },
   "devDependencies": {
+    "@taskr/babel": "^1.1.0",
+    "@taskr/clear": "^1.1.0",
+    "@taskr/esnext": "^1.1.0",
     "ava": "^0.25.0",
+    "babel-plugin-object-rest-spread": "^0.0.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.1",
     "cheerio": "^1.0.0-rc.2",
     "express": "^4.16.2",
     "http-errors": "^1.6.2",
     "next": "^5.0.1-canary.9",
+    "npm-run-all": "^4.1.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "standard": "^11.0.0",
-    "supertest": "^3.0.0"
+    "supertest": "^3.0.0",
+    "taskr": "^1.1.0"
   },
   "peerDependencies": {
     "express": "^4.16.2",
