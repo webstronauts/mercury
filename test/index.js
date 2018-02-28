@@ -23,7 +23,7 @@ test('Mercury can be booted', async t => {
   t.is(res.text, 'Hello, world!')
 })
 
-test('Next.js can be used to render routes', async t => {
+test('Next can be used to render routes', async t => {
   t.plan(2)
 
   const app = createMercuryInstance()
@@ -42,7 +42,7 @@ test('Next.js can be used to render routes', async t => {
   t.is($('[data-reactroot]').text(), 'Hello, world!')
 })
 
-test('Next.js can be used to render HTML', async t => {
+test('Next can be used to render HTML', async t => {
   t.plan(2)
 
   const app = createMercuryInstance()
@@ -63,4 +63,21 @@ test('Next.js can be used to render HTML', async t => {
 
   t.is(res.status, 200)
   t.is($('[data-reactroot]').text(), 'Hello, world!')
+})
+
+test('Next can be used to redirect requests', async t => {
+  t.plan(2)
+
+  const app = createMercuryInstance()
+
+  app.ready(err => {
+    if (err) throw err
+    app.get('/baz', app.renderPage())
+  })
+
+  const res = await request(app)
+    .get('/baz')
+
+  t.is(res.status, 302)
+  t.is(res.header.location, '/bar')
 })
