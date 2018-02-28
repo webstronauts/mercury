@@ -12,8 +12,16 @@ An opinionated framework built on top of [Express](https://expressjs.com/) and [
 ```js
 const app = require('@webstronauts/mercury')()
 
-app.get('/', (req, res) => {
-  res.send('Hello, world!')
+app.ready(err => {
+  if (err) throw err
+
+  // Render this route with Next.js
+  app.get('/', app.renderPage())
+
+  app.post('/api/user', (req, res) => {
+    // Return a JSON response.
+    res.json({ foo: 'bar' })
+  })
 })
 
 async function start () {
