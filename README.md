@@ -9,6 +9,8 @@ An opinionated framework built on top of [Express](https://expressjs.com/) and [
 
 ## Usage
 
+This app below starts a server and listens on port 4000 for connections. The app responds with a SSR rendered page for requests to the root URL (/). For every other path, it will let Next.js handle the rendering.
+
 ```js
 const app = require('@webstronauts/mercury')()
 
@@ -17,6 +19,9 @@ app.ready(err => {
 
   // Render this route with Next.js
   app.get('/', app.renderPage())
+
+  // Fallback to Next.js if the route does not exists.
+  app.get('*', app.getRequestHandler())
 
   app.post('/api/user', (req, res) => {
     // Return a JSON response.
@@ -38,4 +43,14 @@ async function start () {
 }
 
 start()
+```
+
+Where the page rendering the root URL (/pages/index.js) could look like the following;
+
+```js
+import React from 'react'
+
+export default () => (
+  <div>Hello, world!</div>
+)
 ```
