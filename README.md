@@ -21,7 +21,7 @@ app.ready(err => {
   app.get('/', app.renderPage())
 
   // Fallback to Next.js if the route does not exists.
-  app.get('*', app.getRequestHandler())
+  app.get('*', app.next.getRequestHandler())
 
   app.post('/api/user', (req, res) => {
     // Return a JSON response.
