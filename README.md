@@ -54,3 +54,7 @@ export default () => (
   <div>Hello, world!</div>
 )
 ```
+
+## License
+
+MIT © [The Webstronauts](https://www.webstronauts.co/?utm_source=mercury&utm_medium=github)
