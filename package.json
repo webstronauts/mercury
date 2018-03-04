@@ -1,7 +1,7 @@
 {
   "name": "@webstronauts/mercury",
   "description": "A Node.js framework built on top of Express.",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "license": "MIT",
   "author": "Robin van der Vleuten <robin@webstronauts.co>",
   "main": "index.js",
