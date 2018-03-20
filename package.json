@@ -23,9 +23,6 @@
     "redirect.js"
   ],
   "nyc": {
-    "exclude": [
-      ".next"
-    ],
     "instrument": false,
     "sourceMap": false
   },
@@ -47,7 +44,7 @@
     "@taskr/esnext": "^1.1.0",
     "ava": "^0.25.0",
     "babel-plugin-istanbul": "^4.1.5",
-    "babel-plugin-object-rest-spread": "^0.0.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.6.1",
     "cheerio": "^1.0.0-rc.2",
