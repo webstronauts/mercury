@@ -1,5 +1,5 @@
 export async function build (task) {
-  await task.source('lib/**/*.js').babel({
+  await task.source('src/**/*.js').babel({
     presets: [
       ['env', {
         targets: { node: 'current' }
