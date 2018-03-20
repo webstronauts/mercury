@@ -11,6 +11,9 @@ export default function mercury (opts = {}) {
     register, shutdown, listen
   )(express())
 
+  // Disable X-Powered-By header by default.
+  app.disable('x-powered-by')
+
   // Register some plugins by default.
   app.register(logger, opts.logger)
 

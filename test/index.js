@@ -1,4 +1,3 @@
-import cheerio from 'cheerio'
 import request from 'supertest'
 import test from 'ava'
 import mercury from '../index'
@@ -8,7 +7,7 @@ function createMercuryInstance () {
 }
 
 test('Mercury can be booted', async t => {
-  t.plan(2)
+  t.plan(3)
 
   const app = createMercuryInstance()
 
@@ -21,4 +20,5 @@ test('Mercury can be booted', async t => {
 
   t.is(res.status, 200)
   t.is(res.text, 'Hello, world!')
+  t.falsy(res.headers['x-powered-by'])
 })
