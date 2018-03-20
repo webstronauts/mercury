@@ -1,11 +1,12 @@
 import express from 'express'
 import flow from 'lodash.flow'
+import errors from './errors'
 import listen from './listen'
 import logger from './logger'
 import register from './register'
 import shutdown from './shutdown'
 
-export default function mercury (opts = {}) {
+function mercury (opts = {}) {
   const app = flow(
     // Top our Express instance with some Avvio sugar.
     register, shutdown, listen
@@ -19,3 +20,7 @@ export default function mercury (opts = {}) {
 
   return app
 }
+
+mercury.errors = errors
+
+export default mercury
