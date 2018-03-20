@@ -21,6 +21,10 @@ function mercury (opts = {}) {
   return app
 }
 
+// Expose static handler to Mercury users
+mercury.static = express.static
+
+// Expose error handler to Mercury users
 mercury.errors = errors
 
 export default mercury
