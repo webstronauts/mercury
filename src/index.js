@@ -1,6 +1,6 @@
 import express from 'express'
 import flow from 'lodash.flow'
-import errors from './errors'
+import errors, { catchErrors } from './errors'
 import listen from './listen'
 import logger from './logger'
 import register from './register'
@@ -21,10 +21,11 @@ function mercury (opts = {}) {
   return app
 }
 
-// Expose static handler to Mercury users
+// Expose static handler
 mercury.static = express.static
 
-// Expose error handler to Mercury users
+// Expose error handlers
 mercury.errors = errors
+mercury.catchErrors = catchErrors
 
 export default mercury
