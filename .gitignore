@@ -1,5 +1,4 @@
 /*.log
-/.next/
 /.nyc_output/
 /dist/
 /node_modules/
