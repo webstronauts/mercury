@@ -13,9 +13,9 @@ internals.defaultOptions = {
 export default async function errorHandler (app, options) {
   const settings = hoek.applyToDefaults(internals.defaultOptions, options)
 
-  app.ready((err, done) => {
+  app.ready(err => {
     if (err) {
-      return done(err)
+      throw err
     }
 
     app.use((err, req, res, next) => {
