@@ -1,23 +1,17 @@
 import decamelize from 'decamelize'
+import hoek from 'hoek'
 import createError from 'http-errors'
 
+const internals = {}
+
+internals.defaultOptions = {
+  message: 'An unexpected error occured',
+  serializer: internals.serializeError,
+  logger: internals.logError
+}
+
 export default async function errorHandler (app, options) {
-  const serializeError = (error, message) => ({
-    error: {
-      code: decamelize(error.name).replace(/_error$/, ''),
-      message: error.expose ? error.message : message
-    }
-  })
-
-  const logError = error => {
-    if (!(error instanceof createError.HttpError)) {
-      app.log.error(error.message)
-    }
-  }
-
-  const message = options.message || 'An unexpected error occured'
-  const serialize = options.serialize || serializeError
-  const logger = options.logger || logError
+  const settings = hoek.applyToDefaults(internals.defaultOptions, options)
 
   app.ready((err, done) => {
     if (err) {
@@ -25,12 +19,25 @@ export default async function errorHandler (app, options) {
     }
 
     app.use((err, req, res, next) => {
-      logger(err)
+      settings.logger.apply(app, [err])
 
       const error = createError(err)
-      res.status(error.status).send(serialize(error, message))
+      res.status(error.status).send(settings.serialize(error, settings.message))
     })
   })
+}
+
+internals.serializeError = (error, message) => ({
+  error: {
+    code: decamelize(error.name).replace(/_error$/, ''),
+    message: error.expose ? error.message : message
+  }
+})
+
+internals.logError = function (error) {
+  if (!(error instanceof createError.HttpError)) {
+    this.log.error(error.message)
+  }
 }
 
 export function catchErrors (fn) {
