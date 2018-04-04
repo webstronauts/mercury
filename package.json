@@ -16,9 +16,7 @@
   },
   "files": [
     "dist",
-    "errors.js",
-    "index.js",
-    "redirect.js"
+    "index.js"
   ],
   "nyc": {
     "instrument": false,
