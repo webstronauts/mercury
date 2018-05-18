@@ -1,4 +1,4 @@
-const app = require('../index')()
+const app = require('../lib')()
 
 async function start () {
   await app.listen(4000, '0.0.0.0')

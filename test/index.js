@@ -1,6 +1,6 @@
-import request from 'supertest'
-import test from 'ava'
-import mercury from '../index'
+const request = require('supertest')
+const test = require('ava')
+const mercury = require('../lib/index')
 
 function createMercuryInstance () {
   return mercury({ logger: { level: 'silent' } })
