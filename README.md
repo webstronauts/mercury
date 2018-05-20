@@ -1,6 +1,6 @@
 # mercury
 
-An opinionated framework built on top of [Express](https://expressjs.com/).
+An opinionated framework built on top of [Express](https://expressjs.com/) and [avvio](https://www.npmjs.com/package/avvio).
 
 <img src="https://media.giphy.com/media/jaBE1ctpbIv0k/200w_d.gif" width="200" />
 
