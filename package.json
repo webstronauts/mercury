@@ -21,6 +21,7 @@
     "assert": "^1.4.1",
     "avvio": "^5.4.3",
     "decamelize": "^2.0.0",
+    "dotenv": "^5.0.1",
     "express": "^4.16.3",
     "hoek": "^5.0.3",
     "http-errors": "^1.6.3",
