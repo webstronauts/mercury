@@ -1,17 +1,5 @@
-const app = require('../lib')()
-
-async function start () {
-  await app.listen(4000, '0.0.0.0')
-  console.log(app)
-
-  process.on('SIGTERM', async () => {
-    console.log('Received SIGTERM asynchronously')
-    await app.shutdown()
-    process.exit(0)
+module.exports = async function (app, options) {
+  app.get('/', (req, res) => {
+    res.send('Hello, world!')
   })
-
-  // const { port, address } = app.server.address()
-  // app.log.info(`Server running → ${address}:${port}`)
 }
-
-start()
