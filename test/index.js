@@ -1,20 +1,17 @@
 const request = require('supertest')
 const test = require('ava')
-
-const createMercuryInstance = () => require('../lib/index')({
-  logger: { level: 'error' }
-})
+const mercury = require('../lib/index')
 
 test('Mercury can be booted', async t => {
   t.plan(3)
 
-  const mercury = createMercuryInstance()
+  const app = mercury({ logger: 'fatal' })
 
-  mercury.get('/', (req, res) => {
+  app.get('/', (req, res) => {
     res.send('Hello, world!')
   })
 
-  const res = await request(mercury)
+  const res = await request(app)
     .get('/')
 
   t.is(res.status, 200)
@@ -23,25 +20,26 @@ test('Mercury can be booted', async t => {
 })
 
 test.cb('Additional plugins can be loaded', t => {
-  t.plan(3)
+  t.plan(4)
 
-  const mercury = createMercuryInstance()
+  const app = mercury({ logger: 'fatal' })
 
-  function nestedPlugin (mercury, opts, done) {
+  function nestedPlugin (app, opts, done) {
     t.pass()
     done()
   }
 
-  function plugin (mercury, opts, done) {
+  function plugin (app, opts, done) {
     t.pass()
 
-    mercury.load(nestedPlugin)
+    app.load(nestedPlugin)
     done()
   }
 
-  mercury.load(plugin)
+  app.load(plugin)
 
-  mercury.ready(function () {
+  app.ready(function (err) {
+    t.falsy(err)
     t.pass()
     t.end()
   })
