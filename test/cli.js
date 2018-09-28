@@ -5,7 +5,7 @@ const cli = require('../lib/cli')
 test('should start the server', async t => {
   t.plan(1)
 
-  const app = await cli.runMercury('./example/index.js', { logLevel: 'error' })
+  const app = await cli.run('./example/index.js', {logLevel: 'error'})
   const res = await request(app).get('/')
 
   t.is(res.text, 'Hello, world!')
