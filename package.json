@@ -6,8 +6,9 @@
   "author": "Robin van der Vleuten <robin@webstronauts.co>",
   "main": "lib/index.js",
   "scripts": {
+    "precommit": "pretty-quick --staged",
     "release": "standard-version",
-    "test": "standard && nyc ava"
+    "test": "nyc ava"
   },
   "engines": {
     "node": ">=8.9.0"
@@ -38,7 +39,10 @@
   },
   "devDependencies": {
     "ava": "^0.25.0",
+    "husky": "^1.0.1",
     "nyc": "^13.0.0",
+    "prettier": "^1.14.3",
+    "pretty-quick": "^1.7.0",
     "standard": "^11.0.1",
     "standard-version": "^4.4.0",
     "supertest": "^3.1.0"

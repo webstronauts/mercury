@@ -5,7 +5,7 @@ An opinionated framework built on top of [Express](https://expressjs.com/) and [
 <img src="https://media.giphy.com/media/jaBE1ctpbIv0k/200w_d.gif" width="200" />
 
 [![Build Status](https://travis-ci.org/webstronauts/mercury.svg?branch=master)](https://travis-ci.org/webstronauts/mercury)
-[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![Prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
 ## Installation
 
@@ -21,9 +21,9 @@ Your application can be as simple as:
 
 ```js
 // app.js
-module.exports = function (app, options, next) {
-  app.get('/', function (req, res) {
-    res.send({ hello: 'world' })
+module.exports = function(app, options, next) {
+  app.get('/', function(req, res) {
+    res.send({hello: 'world'})
   })
 
   next()
@@ -34,9 +34,9 @@ If you are using Node 8+, you can use `async` functions too:
 
 ```js
 // async-await-plugin.js
-module.exports = async function (app, options) {
-  app.get('/', async function (req, res) {
-    res.send({ hello: 'world' })
+module.exports = async function(app, options) {
+  app.get('/', async function(req, res) {
+    res.send({hello: 'world'})
   })
 }
 ```
