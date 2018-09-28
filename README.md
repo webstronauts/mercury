@@ -1,11 +1,17 @@
-# mercury
+<div align="center">
+
+# mercury ⚗️
 
 An opinionated framework built on top of [Express](https://expressjs.com/) and [avvio](https://www.npmjs.com/package/avvio).
 
-<img src="https://media.giphy.com/media/jaBE1ctpbIv0k/200w_d.gif" width="200" />
+<hr />
 
+[![License](https://img.shields.io/github/license/webstronauts/mercury.svg)](LICENSE.md)
+[![Version](https://img.shields.io/npm/v/@webstronauts/mercury.svg)](https://www.npmjs.com/package/@webstronauts/mercury)
 [![Build Status](https://travis-ci.org/webstronauts/mercury.svg?branch=master)](https://travis-ci.org/webstronauts/mercury)
 [![Prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+
+</div>
 
 ## Installation
 
@@ -54,6 +60,6 @@ We're not re-inventing the wheel here. The inspiration for this framework comes 
 - https://github.com/mcollina/avvio
 - https://github.com/fastify/fastify-cli
 
-## License
+## Author(s)
 
-MIT © [The Webstronauts](https://www.webstronauts.co/?utm_source=mercury&utm_medium=github)
+Robin van der Vleuten ([@robinvdvleuten](https://twitter.com/robinvdvleuten)) - [The Webstronauts](https://www.webstronauts.co?utm_source=github&utm_medium=readme&utm_content=mercury)
