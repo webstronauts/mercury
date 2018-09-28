@@ -4,7 +4,7 @@ An opinionated framework built on top of [Express](https://expressjs.com/) and [
 
 <img src="https://media.giphy.com/media/jaBE1ctpbIv0k/200w_d.gif" width="200" />
 
-[![Build Status](https://semaphoreci.com/api/v1/projects/6c426a6f-60a5-4716-9f09-797a2913ad55/1814984/shields_badge.svg)](https://semaphoreci.com/webstronauts/mercury)
+[![Build Status](https://travis-ci.org/webstronauts/mercury.svg?branch=master)](https://travis-ci.org/webstronauts/mercury)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Usage
