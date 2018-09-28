@@ -11,8 +11,8 @@ test('Errors are serialized', async t => {
 
   const message = 'This route cannot be found 🙈'
 
-  app.get('/', (req, res) => {
-    throw new NotFound(message)
+  app.get('/', (req, res, next) => {
+    next(new NotFound(message))
   })
 
   const res = await request(app)
@@ -39,5 +39,5 @@ test('Error message is generic when it should not be exposed', async t => {
     .get('/')
 
   t.is(res.status, 500)
-  t.deepEqual(res.body, { error: { code: 'internal_server', message: 'An unexpected error occured' } })
+  t.deepEqual(res.body, { error: { code: 'internal_server_error', message: 'An unexpected error occured' } })
 })
