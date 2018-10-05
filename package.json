@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "assert": "^1.4.1",
-    "avvio": "^5.9.0",
+    "avvio": "^6.0.0",
     "decamelize": "^2.0.0",
     "dotenv": "^6.0.0",
     "express": "^4.16.3",
