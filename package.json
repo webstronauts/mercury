@@ -43,7 +43,7 @@
     "nyc": "14.1.1",
     "prettier": "1.17.1",
     "pretty-quick": "1.11.1",
-    "standard-version": "5.0.2",
+    "standard-version": "7.0.1",
     "supertest": "3.4.2"
   }
 }
