@@ -44,6 +44,6 @@
     "prettier": "1.19.1",
     "pretty-quick": "1.11.1",
     "standard-version": "7.0.1",
-    "supertest": "3.4.2"
+    "supertest": "4.0.2"
   }
 }
